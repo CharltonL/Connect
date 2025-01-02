@@ -21,6 +21,7 @@ const run = async () => {
     app.use(express.static(buildPath));
 
     app.get("/health", (req: Request, res: Response) => {
+      console.log("Health check requested");
       res.status(200).send("OK");
     });
 
@@ -30,10 +31,6 @@ const run = async () => {
     });
     app.use(rootRouter);
   }
-
-  app.get("/health", (req: Request, res: Response) => {
-    res.status(200).send("OK");
-  });
 
   await new Promise<void>((resolve) =>
     httpServer.listen({ port: 4000 }, resolve)
