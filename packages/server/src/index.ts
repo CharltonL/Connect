@@ -17,7 +17,7 @@ const run = async () => {
 
   if (NODE_ENV !== "development") {
     console.log("111");
-    const buildPath = path.normalize(path.join(__dirname, "../client"));
+    const buildPath = path.normalize(path.join(__dirname, "../../client/dist"));
     app.use(express.static(buildPath));
 
     const rootRouter = express.Router();
