@@ -20,6 +20,10 @@ const run = async () => {
     const buildPath = path.normalize(path.join(__dirname, "../../client/dist"));
     app.use(express.static(buildPath));
 
+    app.get("/health", (req: Request, res: Response) => {
+      res.status(200).send("OK");
+    });
+
     const rootRouter = express.Router();
     rootRouter.get("(/*)?", async (req, res, next) => {
       res.sendFile(path.join(buildPath, "index.html"));
