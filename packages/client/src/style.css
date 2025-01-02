@@ -1,0 +1,35 @@
+.ag-theme-material {
+    --ag-header-background-color: #ea7200;
+    --ag-header-foreground-color: #fff;
+    --ag-odd-row-background-color: rgb(0, 0, 0, 0.03);
+  
+    --ag-font-size: 17px;
+    --ag-font-family: monospace;
+  }
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overscroll-behavior: none;
+  }
+
+
+  #root {
+
+    height: 100%;
+  }
+
+  @media print {
+    .header,
+    .MuiDrawer-root,
+    .MuiButtonBase-root,
+    .no-print {
+      display: none !important;
+    }
+    .main-container {
+      padding: 0 !important
+    }
+  }
+  

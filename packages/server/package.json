@@ -1,0 +1,33 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "compile": "tsc",
+    "start": "nodemon src/index.ts",
+    "start:staging": "NODE_ENV=staging nodemon src/index.ts",
+    "prisma:generate": "prisma generate",
+    "prisma:reset": "prisma migrate reset",
+    "prisma:reset:test": "NODE_ENV=testing prisma migrate reset",
+    "test": "NODE_ENV=testing npm run prisma:reset:test && NODE_ENV=testing npx playwright test example.spec.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^5.22.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "luxon": "^3.5.0",
+    "tsconfig-paths": "^4.2.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/luxon": "^3.4.2",
+    "@types/node": "^22.10.0",
+    "prisma": "^5.22.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  }
+}
